@@ -1,3 +1,8 @@
+/**
+ * This class may not be used as API.
+ * To get to the API please use RoTCoreAPI.getAPI()
+ */
+
 package rotcore;
 
 import java.util.logging.Logger;
