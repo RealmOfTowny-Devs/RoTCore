@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import api.RoTCoreAPI;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -35,6 +36,8 @@ public class RoTCore extends JavaPlugin {
         setupChat();
         
         instance = this;
+        
+        RoTCoreAPI.getAPI();//Call it ones for initialization only!
         
         log.info(String.format("[%s] Enabled Version %s", getDescription().getName(), getDescription().getVersion()));
 	}
