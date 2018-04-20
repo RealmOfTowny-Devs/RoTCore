@@ -1,4 +1,4 @@
-# Project Title
+# RoTCore
 
 The original RoTCore plugin of Realm of Towny!
 
