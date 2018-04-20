@@ -3,3 +3,4 @@ name: RoTCore
 version: 1.0.0
 author: Realm of Towny
 description: The original RoTCore plugin of Realm of Towny!
+depend: [Vault]
