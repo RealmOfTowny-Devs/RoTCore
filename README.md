@@ -1,4 +1,4 @@
-# RoTCore
+# RoTCore ![Logo](./logo.png)
 
 The original RoTCore plugin of Realm of Towny!
 
