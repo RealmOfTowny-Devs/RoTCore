@@ -18,13 +18,19 @@ private String pluginsMessage;
 	@EventHandler
 	public void onPluginsCommand(PlayerCommandPreprocessEvent e) {
 		String message = e.getMessage();
-		if (message.contains("/pl")
-				|| message.contains("/plugins")
-				|| message.contains("/bukkit:pl")
-				|| message.contains("/bukkit:plugins")) {
+		if (message.contains("/pl ")
+				|| message.contains("/plugins ")
+				|| message.contains("/bukkit:pl ")
+				|| message.contains("/bukkit:plugins ")
+				|| message.equalsIgnoreCase("/pl")
+				|| message.equalsIgnoreCase("/plugins")
+				|| message.equalsIgnoreCase("/bukkit:pl")
+				|| message.equalsIgnoreCase("/bukkit:plugins")) {
 			e.setCancelled(true);
 			e.getPlayer().sendMessage(pluginsMessage);
 			return;
 		}
 	}
+	
+	
 }
