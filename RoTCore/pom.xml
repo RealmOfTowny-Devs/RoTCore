@@ -4,7 +4,9 @@
   <artifactId>RoTCore</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>RoTCore</name>
-<build>
+  <description>The original RoTCore plugin of Realm of Towny!</description>
+  <url>http://www.realmoftowny.net/</url>
+  <build>
       <plugins>
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
@@ -49,8 +51,6 @@
             <artifactId>VaultAPI</artifactId>
             <version>1.6</version>
             <scope>provided</scope>
-   	</dependency>
+    </dependency>
 </dependencies>
-   <description>The original RoTCore plugin of Realm of Towny!</description>
-   <url>http://www.realmoftowny.net/</url>
 </project>

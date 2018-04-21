@@ -18,13 +18,13 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 
 public class RoTCore extends JavaPlugin {
-	
 	private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
     private static Permission perms = null;
     private static Chat chat = null;
     
     private static RoTCore instance = null;
+    private ClassReflection classReflection;
 
 	@Override
 	public void onEnable() {
@@ -39,9 +39,11 @@ public class RoTCore extends JavaPlugin {
         
         instance = this;
         
+        classReflection = new ClassReflection();
+        
         PluginManager pm = getServer().getPluginManager();
         
-        pm.registerEvents(new CommandPreventer(), instance);
+        pm.registerEvents(((CommandPreventer)classReflection.getNewInstanceOf(CommandPreventer.class)), instance);
         
         RoTCoreAPI.getAPI();//Call it ones for initialization only!
         
@@ -68,12 +70,18 @@ public class RoTCore extends JavaPlugin {
     
     private boolean setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        if (rsp == null) {
+            return false;
+        }
         chat = rsp.getProvider();
         return chat != null;
     }
     
     private boolean setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
+        if (rsp == null) {
+            return false;
+        }
         perms = rsp.getProvider();
         return perms != null;
     }

@@ -11,7 +11,7 @@ public class CommandPreventer implements Listener {
 
 private String pluginsMessage;
 	
-	public CommandPreventer() {
+	private CommandPreventer() {
 		pluginsMessage = ChatColor.translateAlternateColorCodes('&', "Plugins (1): &a"+RoTCore.getInstance().getDescription().getName());
 	}
 	
