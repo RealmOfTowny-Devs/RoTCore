@@ -16,9 +16,12 @@ private String pluginsMessage;
 	}
 	
 	@EventHandler
-	public void onPluginCmd(PlayerCommandPreprocessEvent e) {
+	public void onPluginsCommand(PlayerCommandPreprocessEvent e) {
 		String message = e.getMessage();
-		if (message.equalsIgnoreCase("/pl") || message.equalsIgnoreCase("/plugins")) {
+		if (message.contains("/pl")
+				|| message.contains("/plugins")
+				|| message.contains("/bukkit:pl")
+				|| message.contains("/bukkit:plugins")) {
 			e.setCancelled(true);
 			e.getPlayer().sendMessage(pluginsMessage);
 			return;
