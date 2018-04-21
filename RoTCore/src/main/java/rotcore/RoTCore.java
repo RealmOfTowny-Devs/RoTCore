@@ -7,10 +7,12 @@ package rotcore;
 
 import java.util.logging.Logger;
 
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import api.RoTCoreAPI;
+import listeners.CommandPreventer;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -36,6 +38,10 @@ public class RoTCore extends JavaPlugin {
         setupChat();
         
         instance = this;
+        
+        PluginManager pm = getServer().getPluginManager();
+        
+        pm.registerEvents(new CommandPreventer(), instance);
         
         RoTCoreAPI.getAPI();//Call it ones for initialization only!
         
